@@ -74,98 +74,52 @@
       width: 100%;">
     </section>
 
-    <section class="product text px-5">
+    <section class="product px-5">
       <h2 class=" pt-5">Featured Products</h2>
       <p>Here is a list of product</p>
-      <div class="pro-container">
-        <div class="pro my-5">
-          <img src="../images/background image.jpg" alt="">
+      <div id="product-grid">
+        <div class="pro mb-4" onclick="window.location.href='../pages/single-product.html'">
+          <img src=${objects.image} alt="Product Image" class='my-3'>
+          <hr>
           <div class="des">
-            <span>category</span>
-            <h5>title</h5>
-            <div class="star">
+            <span>${objects.category}</span>
+            <h5>${objects.title}</h5>
+            <div class="star">${objects.rating.rate}
               <i class="fas fa-star"></i>
               <i class="fas fa-star"></i>
               <i class="fas fa-star"></i>
               <i class="fas fa-star"></i>
               <i class="fas fa-star"></i>
             </div>
-            <h4>₹</h4>
+            <h4>₹${objects.price}</h4>
           </div>
-          <a href=""><i class="fa-solid fa-cart-plus cart"></i></a>
-        </div>
-        <div class="pro my-5">
-          <img src="../images/background image.jpg" alt="">
-          <div class="des">
-            <span>category</span>
-            <h5>title</h5>
-            <div class="star">
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-            </div>
-            <h4>₹</h4>
-          </div>
-          <a href=""><i class="fa-solid fa-cart-plus cart"></i></a>
-        </div>
-        <div class="pro my-5">
-          <img src="../images/background image.jpg" alt="">
-          <div class="des">
-            <span>category</span>
-            <h5>title</h5>
-            <div class="star">
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-            </div>
-            <h4>₹</h4>
-          </div>
-          <a href=""><i class="fa-solid fa-cart-plus cart"></i></a>
-        </div>
-        <div class="pro my-5">
-          <img src="../images/background image.jpg" alt="">
-          <div class="des">
-            <span>category</span>
-            <h5>title</h5>
-            <div class="star">
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-            </div>
-            <h4>₹</h4>
-          </div>
-          <a href=""><i class="fa-solid fa-cart-plus cart"></i></a>
-        </div>
-        <div class="pro">
-          <img src="../images/background image.jpg" alt="">
-          <div class="des">
-            <span>category</span>
-            <h5>title</h5>
-            <div class="star">
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-            </div>
-            <h4>₹</h4>
-          </div>
-          <a href=""><i class="fa-solid fa-cart-plus cart"></i></a>
-        </div>
-      </div>
-      
-
+          <a href=""><i class="fa-solid fa-circle-info fa-xl detail"></i></a>
+          <a href=""><i class="fa-solid fa-cart-plus fa-xl cart"></i></a>
+        </div> 
     </section>
 
+    <footer style="background-color: #ECE4CF;">
+      <div class="container-fluid">
+        <div class="row p-4">
+          <div class="col-6">
+            <p> © Copyright <strong>Instant Grocery</strong>. All rights reserved.</p>
+            <p>Designed by <span class="text-primary">Mridul Thakur</span></p>
+          </div>
+          <div class="col-6 socialAlignFooter">
+                <ul>
+                  <li class="CompanyFASocialRound bg-primary"><i class="fa fa-brands fa-twitter fa-xl"></i></li>
+                  <li class="CompanyFASocialRound bg-primary"><i class="fa fa-brands fa-facebook fa-xl"></i></li>
+                  <li class="CompanyFASocialRound bg-primary"><i class="fa-brands fa-instagram fa-xl"></i></li>
+                  <li class="CompanyFASocialRound bg-primary"><i class="fa-brands fa-skype fa-xl"></i></li>
+                  <li class="CompanyFASocialRound bg-primary"><i class="fa-brands fa-linkedin fa-xl"></i></li>
+                </ul>
+          </div>
+        </div>
+      </div>
+    </footer>
 
     <script src="../js/bootstrap.bundle.min.js"></script>
-      <script src="../js/homePage.js"></script>
+      <script src="../js/home-page.js"></script>
 
     </body>
 

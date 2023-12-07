@@ -54,18 +54,9 @@ header {
 }
 .navMenu {
   padding: 5px 0;
-  /* border: 1px solid #e0e0e0; */
   box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.06);
  }
-/* #myNavbar {
-  float: right;
-  padding-right: 0; */
-/* }
-.navMenu nav {
-  background-color: #fff;
-  border: none;
-  margin-bottom: 0;
-} */
+
 
 #myNavbar li a{
   font-weight: 700;
@@ -99,9 +90,10 @@ button {
 
 .product{
   text-align: center;
+  background-color: #f6f6f6;
 }
 
-.product .pro-container{
+.product #product-grid{
   display: flex;
   justify-content: space-between;
   padding-top: 20px;
@@ -120,8 +112,9 @@ button {
   position: relative;
 }
 .product .pro img{
-  width: 100%;
+  width: 250px;
   border-radius: 20px;
+  height: 250px;
 }
 
 .product .pro:hover{
@@ -152,9 +145,9 @@ button {
   font-weight: 700;
 }
 .product .pro .cart{
-  width: 40px;
-  height: 40px;
-  line-height: 40px;
+  width: 50px;
+  height: 50px;
+  line-height: 50px;
   border-radius: 50px;
   background-color: #cce7d0;
   color: #088177;
@@ -162,4 +155,75 @@ button {
   position: absolute;
   bottom: 25px;
   right: 25px; 
+}
+.product .pro .detail{
+  width: 50px;
+  height: 50px;
+  line-height: 50px;
+  border-radius: 50px;
+  background-color: #cce7d0;
+  color: #088177;
+  border: 1px solid #cce7d0;
+  position: absolute;
+  bottom: 25px;
+  right: 100px; 
+}
+
+/* footer  */
+
+.socialAlignFooter {
+  text-align: right;
+}
+
+.CompanyFASocialRound{
+  border-radius: 50%;
+  width: 37px;
+  height: 37px;
+  background-color: #A0BCD5;
+  color: white;
+  padding: 7px;
+  margin: 2px;
+}
+
+.p-4 div ul li{
+  display: inline-block;
+}
+
+/* Single Product Page */
+
+#prodetails .single-pro-image{
+  width: 40%;
+  margin-left: 10px;
+}
+
+#prodetails {
+  display: flex;
+  margin-top: 20px;
+}
+
+#prodetails .single-pro-details{
+  width: 50%;
+  padding-top: 30px;
+  margin-left: 50px;
+}
+
+#prodetails .single-pro-details h4{
+  padding-top: 40px 0px 20px 0px;
+}
+#prodetails .single-pro-details h2{
+  font-size: 32px;
+}
+#prodetails .single-pro-details input{
+  width: 45px;
+  height: 40px;
+  margin-right: 15px;
+  padding-left: 5px;
+}
+
+
+/* Cart Page */
+
+#cart table img{
+  width: 100px;
+
 }
