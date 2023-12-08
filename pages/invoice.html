@@ -69,33 +69,39 @@
         <h1 class="text-center">Welcome to Instant Grocery</h1>
         <h2 class="text-center mb-0">Let's Bring Grocery to your Home in 10 minutes </h2>
       </div>
-      <a href=""><img src="../images/home-page-bg.jpeg" alt="background Image" class="home-page-bg"></a>
-      <img src="../images/banner-1.png" alt="banner-1" style="
-      width: 100%;">
     </section>
 
-    <section class="product px-5">
-      <h2 class=" pt-5">Featured Products</h2>
-      <p>Here is a list of product</p>
-      <div id="product-grid">
-        <div class="pro mb-4" onclick="window.location.href='../pages/single-product.html'">
-          <img src=${objects.image} alt="Product Image" class='my-3'>
-          <hr>
-          <div class="des">
-            <span>${objects.category}</span>
-            <h5>${objects.title}</h5>
-            <div class="star">${objects.rating.rate}
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
+
+    <section>
+        <div class="invoice-container">
+            <div class="header">
+                <h1>Invoice</h1>
             </div>
-            <h4>₹${objects.price}</h4>
-          </div>
-          <a href=""><i class="fa-solid fa-circle-info fa-xl detail"></i></a>
-          <a href=""><i class="fa-solid fa-cart-plus fa-xl cart"></i></a>
-        </div> 
+    
+            <div class="order-details">
+                <h2>Order: <span id="orderId"></span></h2>
+                <strong>Date: </strong><span id="invoiceDate"></span>
+                <p>Address:</p>
+            </div>
+    
+            <table class="product-details">
+                <thead>
+                    <tr>
+                        <th>Image</th>
+                        <th>Product</th>
+                        <th>Price</th>
+                        <th>Quantity</th>
+                        <th>Subtotal</th>
+                    </tr>
+                </thead>
+                <tbody id="invoiceTableBody">
+                </tbody>
+            </table>
+    
+            <div class="total">
+                <h2>Total: ₹<span id="invoiceTotalAmount">0</span></h2>
+            </div>
+        </div>
     </section>
 
     <footer style="background-color: #ECE4CF;">
@@ -119,8 +125,7 @@
     </footer>
 
     <script src="../js/bootstrap.bundle.min.js"></script>
-      <script src="../js/home-page.js"></script>
-
+      <script src="../js/invoice.js"></script>
     </body>
-
   </html>
+

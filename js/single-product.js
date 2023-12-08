@@ -12,7 +12,7 @@ fetch(`https://fakestoreapi.com/products/${id}`)
                 <h6>${product.category}</h6>
                 <h2>${product.title}</h2>
                 <h4>₹${product.price}</h4>
-                <input type="number" value="1" max="10" min="1">
+                <input type="number" value="2" max="10" min="2">
                 <button class="btn btn-success" id="addToCartBtn">Add to cart</button>
                 <h4 class="my-3">Product Details</h4>
                 <span>${product.description}</span>
