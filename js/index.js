@@ -1,4 +1,4 @@
-function validateForm() {
+function registrationValidation() {
   let firstName = document.getElementById("fName").value.trim();
   let lastName = document.getElementById("lName").value.trim();
   let email = document.getElementById("email").value.trim();

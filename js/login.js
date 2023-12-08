@@ -1,4 +1,4 @@
-function validateLogin() {
+function loginValidations() {
     let email = document.getElementById('loginEmail').value;
     let password = document.getElementById('loginPassword').value;
 

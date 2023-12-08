@@ -1,48 +1,57 @@
 document.addEventListener('DOMContentLoaded', () => {
-    // Retrieve cart data from localStorage
-    const cart = JSON.parse(localStorage.getItem('cart')) || [];
+    displayCartItems();
+});
 
-    // Display the cart details on the page
+function displayCartItems() {
+    const cart = JSON.parse(localStorage.getItem('cart')) || [];
     const cartTableBody = document.querySelector('#cart tbody');
 
-    cart.forEach(product => {
+    cartTableBody.innerHTML = '';
+
+    cart.forEach(item => {
         const row = document.createElement('tr');
         row.innerHTML = `
-            <td><a href="#" class="removeProduct" data-id="${product.id}"><i class="fa fa-times-circle"></i></a></td>
-            <td><img src="" alt=""></td>
-            <td>${product.name}</td>
-            <td>${product.price}</td>
-            <td>Quantity</td>
-            <td>Subtotal</td>
+            <td onclick="removeCartItem(${item.id})" class="align-middle"><a href="#"><i class="fa fa-times-circle fa-2xl text-danger"></i></a></td>
+            <td><img src="${item.image}" alt="${item.title}" style="width: 150px; height: 150px;"></td>
+            <td class='align-middle'>${item.title}</td>
+            <td class='align-middle'>₹${item.price}</td>
+            <td class='align-middle'>
+                <input type="number" class="quantity-input p-2" value="${item.quantity}" min="2" max="10" onchange="updateQuantity(${item.id}, this.value)">
+            </td>
+            <td class='align-middle'>₹${item.price * item.quantity}</td>
         `;
         cartTableBody.appendChild(row);
     });
 
-    // Add event listeners for removing products from the cart
-    document.querySelectorAll('.removeProduct').forEach(removeLink => {
-        removeLink.addEventListener('click', removeProduct);
-    });
-});
+    updateCartTotal();
+}
 
-function removeProduct(event) {
-    event.preventDefault();
-
-    const productId = event.target.dataset.id;
-
-    // Retrieve cart data from localStorage
+function removeCartItem(itemId) {
     const cart = JSON.parse(localStorage.getItem('cart')) || [];
+    const updatedCart = cart.filter(item => item.id !== itemId);
+    localStorage.setItem('cart', JSON.stringify(updatedCart));
+    displayCartItems();
+}
 
-    // Find the index of the product with the given ID in the cart
-    const productIndex = cart.findIndex(product => product.id === parseInt(productId, 10));
+function updateQuantity(itemId, newQuantity) {
+    const cart = JSON.parse(localStorage.getItem('cart')) || [];
+    const updatedCart = cart.map(item => {
+        if (item.id === itemId) {
+            return { ...item, quantity: parseInt(newQuantity) };
+        }
+        return item;
+    });
+    localStorage.setItem('cart', JSON.stringify(updatedCart));
+    displayCartItems();
+}
 
-    // Remove the product from the cart array
-    if (productIndex !== -1) {
-        cart.splice(productIndex, 1);
+function updateCartTotal() {
+    const cart = JSON.parse(localStorage.getItem('cart')) || [];
+    const subtotal = cart.reduce((total, item) => total + item.price * item.quantity, 0);
 
-        // Update the cart data in localStorage
-        localStorage.setItem('cart', JSON.stringify(cart));
+    const totalRow = document.querySelector('#subtotal td:nth-child(2)');
+    const amountRow = document.querySelector('#subtotal tr:nth-child(3) td:last-child');
 
-        // Refresh the page to reflect the changes
-        location.reload();
-    }
+    totalRow.textContent = `₹${subtotal}`;
+    amountRow.textContent = `₹${subtotal}`;
 }
