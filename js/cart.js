@@ -16,7 +16,7 @@ function displayCartItems() {
             <td class='align-middle'>${item.title}</td>
             <td class='align-middle'>₹${item.price}</td>
             <td class='align-middle'>
-                <input type="number" class="quantity-input p-2" value="${item.quantity}" min="2" max="10" onchange="updateQuantity(${item.id}, this.value)">
+                <input type="number" class="quantity-input p-2" value="${item.quantity}" min="3" max="10" onchange="updateQuantity(${item.id}, this.value)">
             </td>
             <td class='align-middle'>₹${item.price * item.quantity}</td>
         `;
